@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://data:data123@cluster0.xbdzw.mongodb.net/datas?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://data:${process.env.PW}@cluster0.xbdzw.mongodb.net/datas?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true });
 console.log('Successfully connected to MongoDB at: mongodb');
 const userSchema = new mongoose.Schema({
