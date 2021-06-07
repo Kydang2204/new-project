@@ -1,6 +1,4 @@
-const dotevn = require('dotenv');
-
-dotevn.config();
+require('dotenv').config();
 const express = require('express');
 
 const app = express();
@@ -9,4 +7,4 @@ app.get('/', (req, res) => {
 });
 
 app.listen(process.env.PORT);
-console.log('App listening on 2');
+console.log(`App listening on ${process.env.PORT} `);
