@@ -10,8 +10,7 @@
     "express": "^4.17.1",
     "mogodb": "0.0.1-security",
     "mongodb": "^3.6.9",
-    "mongoose": "^5.12.13",
-    "yarn": "^1.22.10"
+    "mongoose": "^5.12.13"
   },
   "devDependencies": {
     "eslint": "^7.28.0",
