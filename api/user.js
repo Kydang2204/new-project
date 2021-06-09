@@ -8,6 +8,7 @@ const router = express.Router();
 // Get all users
 router.get('/', async (req, res) => {
   const users = await User.find({});
+
   res.json(users);
 });
 
@@ -20,6 +21,7 @@ router.get('/:id', async (req, res) => {
 // Post a user
 router.post('/', async (req, res) => {
   const user = new User(req.body);
+
   try {
     user.save();
     res.json('Add user successfully');
@@ -36,6 +38,7 @@ router.put('/:id', async (req, res) => {
     }
     const user = await User.findByIdAndUpdate(req.params.id, req.body,
       { useFindAndModify: false });
+
     if (!user) return res.status(404).json('Cannot update .id  was not found!');
     return res.json('updated successfully.');
   } catch (error) {
@@ -47,6 +50,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id, req.body);
+
     if (!user) res.status(404).send('No user found');
     else res.json('Deleted sucessfully');
   } catch (error) {
@@ -59,21 +63,27 @@ router.post('/register', async (req, res) => {
   const user = new User(req.body);
   const result = await User.findOne({ name: user.name } || { email: user.email });
   if (!result) {
-    user.password = bcrypt.hashSync(req.body.password, 10);
+    let salt = await bcrypt.genSalt(10);
+
+    user.password = await bcrypt.hash(req.body.password,salt).toString();
     user.save();
     res.json(1);
   } else res.json(-1);
+
 });
 
 // api login
 router.post('/login', async (req, res) => {
-  const user = new User(req.body);
-  const result = await User.findOne({ email: user.email });
+  let user = new User(req.body);
+  let result = await User.findOne({ email: user.email });
   if (result) {
-    const checkPassword = bcrypt.compareSync(user.password, result.password);
+    const checkPassword = bcrypt.compare(user.password, result.password);
+
     if (checkPassword) {
-      const token = jsonwebtoken.sign({ id: user.id, email: user.email }, `${process.env.JSONWEBTOKE_PASSWORD}`);
-      res.json({ code: 1, token });
+      const token = jsonwebtoken.sign({id:result.id,name:result.name}, `${process.env.JSONWEBTOKE_PASSWORD}`,{expiresIn: 60000 });
+      res.header("auth_token", token).json({
+        error: null,
+        data:token})
     } else {
       (
         res.json(-1)
