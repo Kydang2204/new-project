@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(`mongodb+srv://data:${process.env.MONGDB_PASSWORD}@cluster0.xbdzw.mongodb.net/datas?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://${process.env.MONGDB_USER}:${process.env.MONGDB_PASSWORD}@${process.env.MONGDB_HOST}/datas?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true });
 
 console.log('Successfully connected to MongoDB at: mongodb');

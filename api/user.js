@@ -1,16 +1,20 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+const jsonwebtoken = require('jsonwebtoken');
 const User = require('../models/user');
 
 const router = express.Router();
 
 // Get all users
 router.get('/', async (req, res) => {
-  res.json(await User.find({}));
+  const users = await User.find({});
+  res.json(users);
 });
 
 // Get one user
 router.get('/:id', async (req, res) => {
-  res.json(await User.findById({ _id: req.params.id }));
+  const user = await User.findById({ _id: req.params.id });
+  res.json(user);
 });
 
 // Post a user
@@ -48,6 +52,34 @@ router.delete('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).send(error);
   }
+});
+
+// api register
+router.post('/register', async (req, res) => {
+  const user = new User(req.body);
+  const result = await User.findOne({ name: user.name } || { email: user.email });
+  if (!result) {
+    user.password = bcrypt.hashSync(req.body.password, 10);
+    user.save();
+    res.json(1);
+  } else res.json(-1);
+});
+
+// api login
+router.post('/login', async (req, res) => {
+  const user = new User(req.body);
+  const result = await User.findOne({ email: user.email });
+  if (result) {
+    const checkPassword = bcrypt.compareSync(user.password, result.password);
+    if (checkPassword) {
+      const token = jsonwebtoken.sign({ id: user.id, email: user.email }, `${process.env.JSONWEBTOKE_PASSWORD}`);
+      res.json({ code: 1, token });
+    } else {
+      (
+        res.json(-1)
+      );
+    }
+  } else res.json(-2);
 });
 
 module.exports = router;
