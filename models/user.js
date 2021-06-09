@@ -3,9 +3,9 @@ const mongoose = require('./main');
 mongoose.set('useCreateIndex', true);
 const userSchema = new mongoose.Schema({
   name: {
-    type: String, },
+    type: String,unique: true },
   email: {
-    type: String,
+    type: String,unique: true
   },
   password: {
     type: String,

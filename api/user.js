@@ -61,15 +61,13 @@ router.delete('/:id', async (req, res) => {
 // api register
 router.post('/register', async (req, res) => {
   const user = new User(req.body);
-  const result = await User.findOne({ name: user.name } || { email: user.email });
+  const result = await User.findOne({$or:[{"name": user.name}, { "email": user.email }]});
   if (!result) {
     let salt = await bcrypt.genSalt(10);
-
-    user.password = await bcrypt.hash(req.body.password,salt).toString();
+    user.password = await bcrypt.hash(req.body.password,salt);
     user.save();
     res.json(1);
   } else res.json(-1);
-
 });
 
 // api login
@@ -77,10 +75,9 @@ router.post('/login', async (req, res) => {
   let user = new User(req.body);
   let result = await User.findOne({ email: user.email });
   if (result) {
-    const checkPassword = bcrypt.compare(user.password, result.password);
-
+    const checkPassword = await bcrypt.compare(user.password,result.password);
     if (checkPassword) {
-      const token = jsonwebtoken.sign({id:result.id,name:result.name}, `${process.env.JSONWEBTOKE_PASSWORD}`,{expiresIn: 60000 });
+      const token = await jsonwebtoken.sign({id:result.id,name:result.name}, `${process.env.JSONWEBTOKE_PASSWORD}`,{expiresIn: 60000 });
       res.header("auth_token", token).json({
         error: null,
         data:token})
