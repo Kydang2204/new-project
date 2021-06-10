@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
 // Get one user
 router.get('/:id', async (req, res) => {
   const user = await User.findById({ _id: req.params.id });
+
   res.json(user);
 });
 
@@ -58,35 +59,39 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// api login
+router.post('/login', async (req, res) => {
+  const user = new User(req.body);
+  const result = await User.findOne({ email: user.email });
+
+  if (result) {
+    const checkPassword = await bcrypt.compare(user.password, result.password);
+
+    if (checkPassword) {
+      const token = await jsonwebtoken.sign({ id: result.id, name: result.name }, `${process.env.JSONWEBTOKEN_PASSWORD}`, { expiresIn: 60000 });
+
+      res.header('auth_token', token).json({
+        error: null,
+        data: token,
+      });
+    } else {
+      res.json(-1);
+    }
+  } else res.json(-2);
+});
+
 // api register
 router.post('/register', async (req, res) => {
   const user = new User(req.body);
-  const result = await User.findOne({$or:[{"name": user.name}, { "email": user.email }]});
+  const result = await User.findOne({ $or: [{ name: user.name }, { email: user.email }] });
+
   if (!result) {
-    let salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(req.body.password,salt);
+    const salt = await bcrypt.genSalt(10);
+
+    user.password = await bcrypt.hash(req.body.password, salt);
     user.save();
     res.json(1);
   } else res.json(-1);
-});
-
-// api login
-router.post('/login', async (req, res) => {
-  let user = new User(req.body);
-  let result = await User.findOne({ email: user.email });
-  if (result) {
-    const checkPassword = await bcrypt.compare(user.password,result.password);
-    if (checkPassword) {
-      const token = await jsonwebtoken.sign({id:result.id,name:result.name}, `${process.env.JSONWEBTOKE_PASSWORD}`,{expiresIn: 60000 });
-      res.header("auth_token", token).json({
-        error: null,
-        data:token})
-    } else {
-      (
-        res.json(-1)
-      );
-    }
-  } else res.json(-2);
 });
 
 module.exports = router;

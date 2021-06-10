@@ -11,6 +11,7 @@
     },
     "rules": {
         "no-console":"off",
-        "newline-after-var": ["error", "always"]
+        "newline-after-var": ["error", "always"],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0 }]
     }
 }
