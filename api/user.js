@@ -29,10 +29,9 @@ router.put('/:id', async (req, res) => {
     if (!req.body) {
       return res.status(400).json('Data to update can not be empty!');
     }
-    const user = await User.findByIdAndUpdate(req.params.id, req.body,
-      {
-        useFindAndModify: false,
-      });
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+      useFindAndModify: false,
+    });
     if (!user) return res.status(404).json('Cannot update .id  was not found!');
     return res.json('updated successfully.');
   } catch (error) {
