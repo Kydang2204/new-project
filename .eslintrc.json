@@ -11,7 +11,9 @@
     },
     "rules": {
         "no-console":"off",
-        "newline-after-var": ["error", "always"],
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0 }]
+        "newline-after-var": ["error", "never"],
+        "no-multiple-empty-lines": ["error", { "max": 0}],
+        "object-curly-newline": ["error", "always"],
+        "import/newline-after-import": "off"
     }
 }

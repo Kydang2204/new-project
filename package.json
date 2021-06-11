@@ -19,11 +19,13 @@
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "husky": "^6.0.0"
   },
   "scripts": {
     "lint": "eslint ./ --fix",
-    "start": "nodemon index"
+    "start": "nodemon index",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC"
