@@ -13,8 +13,39 @@
     },
     "rules": {
         "no-console":"off",
-        "no-multiple-empty-lines": ["error", { "max": 0}],
+        "no-multiple-empty-lines": ["error", { "max": 1}],
         "object-curly-newline": ["error", "always"],
-        "import/newline-after-import": "off"
-    }
+        "import/newline-after-import": "off",
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": [
+                    "block",
+                    "block-like",
+                    "multiline-expression",
+                    "multiline-block-like",
+                    "class",
+                    "expression"
+                ]
+            },
+            {
+                "blankLine": "always",
+                "prev": [
+                    "block",
+                    "block-like",
+                    "multiline-expression",
+                    "multiline-block-like",
+                    "class",
+                    "expression"
+                ],
+                "next": "*"
+            },
+            {
+                "blankLine": "any",
+                "prev": ["const", "let", "var"],
+                "next": ["const", "let", "var"]
+            }
+        ]}
 }
