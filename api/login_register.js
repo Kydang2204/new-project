@@ -9,7 +9,6 @@ router.post('/login', async (req, res) => {
   const result = await User.findOne({
     email: user.email,
   });
-
   if (result) {
     const checkPassword = await bcrypt.compare(user.password, result.password);
 
@@ -39,7 +38,6 @@ router.post('/register', async (req, res) => {
       email: user.email,
     }],
   });
-
   if (!result) {
     const salt = await bcrypt.genSalt(10);
 

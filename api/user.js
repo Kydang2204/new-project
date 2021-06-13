@@ -42,7 +42,6 @@ router.put('/:id', async (req, res) => {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       useFindAndModify: false,
     });
-
     if (!user) return res.status(404).json('Cannot update .id  was not found!');
     return res.json('updated successfully.');
   } catch (error) {
@@ -54,7 +53,6 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id, req.body);
-
     if (!user) res.status(404).send('No user found');
     else res.json('Deleted sucessfully');
   } catch (error) {
