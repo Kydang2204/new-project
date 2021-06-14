@@ -27,7 +27,9 @@ router.post('/', async (req, res) => {
   try {
     user.save();
 
-    res.json('Add user successfully');
+    res.json({
+      msg: 'Add user successfully',
+    });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -37,14 +39,24 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     if (!req.body) {
-      return res.status(400).json('Data to update can not be empty!');
+      return res.status(400).json({
+        error: 'Data to update can not be empty!',
+      });
     }
 
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       useFindAndModify: false,
     });
-    if (!user) return res.status(404).json('Cannot update .id  was not found!');
-    return res.json('updated successfully.');
+
+    if (!user) {
+      return res.status(404).json({
+        error: 'Cannot update .id  was not found!',
+      });
+    }
+
+    return res.json({
+      msg: 'Updated successfully.',
+    });
   } catch (error) {
     return res.status(500).send(error);
   }
@@ -54,8 +66,16 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id, req.body);
-    if (!user) res.status(404).send('No user found');
-    else res.json('Deleted sucessfully');
+
+    if (!user) {
+      res.status(404).json({
+        msg: 'No user found',
+      });
+    } else {
+      res.json({
+        msg: 'Deleted sucessfully',
+      });
+    }
   } catch (error) {
     res.status(500).send(error);
   }

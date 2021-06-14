@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const router = require('./api/user');
 const mung = require('./express_mung');
 const verifyToken = require('./api/verify_user');
-const router2 = require('./api/user');
+const router2 = require('./api/login_register');
 
 const app = express();
 
@@ -25,4 +25,4 @@ app.use('/api/public', router2);
 
 app.listen(process.env.PORT);
 
-console.log(`App listening on ${process.env.PORT} `);
+console.log(`App listening on ${process.env.PORT}`);

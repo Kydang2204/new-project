@@ -1,8 +1,7 @@
 require('dotenv').config();
 
-function nodeEnv() {
-  if (process.env.NODE_ENV === 'development') return 'off';
-  return 'error';
+function isDevelopment() {
+  return process.env.NODE_ENV === 'development';
 }
 
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
-    'no-console': nodeEnv(),
+    'no-console': isDevelopment() ? 'off' : 'error',
     'no-multiple-empty-lines': ['error', {
       max: 1,
     }],
