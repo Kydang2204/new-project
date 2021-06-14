@@ -18,11 +18,9 @@ module.exports = {
   },
   rules: {
     'no-console': nodeEnv(),
-    'import/newline-after-import': nodeEnv(),
     'no-multiple-empty-lines': ['error', {
       max: 1,
     }],
-
     'object-curly-newline': ['error', 'always'],
     'padding-line-between-statements': [
       'error',
@@ -39,7 +37,8 @@ module.exports = {
           'block',
           'block-like',
           'expression',
-
+          'const',
+          'let',
         ],
       },
       {
