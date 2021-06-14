@@ -12,15 +12,11 @@ module.exports = {
   extends: [
     'airbnb-base',
   ],
-  parserOptions: {
-    ecmaVersion: 12,
-  },
+  parserOptions: { ecmaVersion: 12 },
   rules: {
     'no-console': isDevelopment() ? 'off' : 'error',
-    'no-multiple-empty-lines': ['error', {
-      max: 1,
-    }],
-    'object-curly-newline': ['error', 'always'],
+    'no-multiple-empty-lines': ['error', { max: 1 }],
+    'object-curly-newline': ['error', { minProperties: 2 }],
     'padding-line-between-statements': [
       'error',
       {

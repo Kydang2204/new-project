@@ -4,9 +4,7 @@ const verifyToken = (req, res, next) => {
   const token = req.header('auth_token');
 
   if (!token) {
-    res.status(400).json({
-      error: 'Access denied',
-    });
+    res.status(401).json({ error: 'Access denied' });
   }
 
   try {
@@ -17,11 +15,7 @@ const verifyToken = (req, res, next) => {
     req.user = verified;
 
     next();
-  } catch {
-    res.status(400).json({
-      error: 'Token is not valid',
-    });
-  }
+  } catch { res.status(400).json({ error: 'Token is not valid' }); }
 };
 
 module.exports = verifyToken;

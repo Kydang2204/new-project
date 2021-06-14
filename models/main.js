@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(`mongodb+srv://${process.env.MONGDB_USER}:${process.env.MONGDB_PASSWORD}@${process.env.MONGDB_HOST}/datas?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://${process.env.MONGDB_USER}:${process.env.MONGDB_PASSWORD}@${process.env.MONGDB_HOST}?retryWrites=true&w=majority`, {
   useNewUrlParser: true, useUnifiedTopology: true,
 });
 
