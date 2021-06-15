@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 async function checkEmail(req, res, next) {
   if (!await User.findOne({ email: req.body.email })) {
-    return res.json({ error: 'You have to register first' });
+    return res.json(1000);
   }
 
   next();
@@ -19,7 +19,7 @@ async function checkPassword(req, res) {
   const result = await User.findOne({ email: req.body.email });
 
   if (!await bcrypt.compare(req.body.password, result.password)) {
-    return res.json({ error: 'Password wrong' });
+    return res.json(1001);
   }
 
   res.json({ data: jsonwebtoken.sign({
@@ -33,7 +33,7 @@ router.post('/login', checkEmail, checkPassword);
 
 async function existEmailOrName(req, res, next) {
   if (await User.findOne({ $or: [{ name: req.body.name }, { email: req.body.email }] })) {
-    return res.status(401).json({ error: 'Your email or name have registered' });
+    return res.json(1002);
   }
 
   next();
@@ -46,7 +46,7 @@ router.post('/register', existEmailOrName, async (req, res) => {
 
   User.create(req.body);
 
-  res.json({ msg: 'You have successfully registered' });
+  res.json(2000);
 });
 
 module.exports = router;

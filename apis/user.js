@@ -17,21 +17,21 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   User.create(req.body);
 
-  res.json({ msg: 'Add user successfully' });
+  res.json(2001);
 });
 
 // Update user
 router.put('/:id', async (req, res) => {
   await User.findByIdAndUpdate(req.params.id, req.body);
 
-  res.json({ msg: 'Updated successfully.' });
+  res.json(2002);
 });
 
 // Delete user
 router.delete('/:id', async (req, res) => {
   await User.findByIdAndDelete(req.params.id, req.body);
 
-  res.json({ msg: 'Deleted sucessfully' });
+  res.json(2003);
 });
 
 module.exports = router;

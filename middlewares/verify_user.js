@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 function hasToken(req, res, next) {
   if (!req.header('auth_token')) {
-    return res.status(401).json({ error: 'Access denied' });
+    return res.json(1003);
   }
 
   next();
@@ -16,7 +16,7 @@ function hasRightToken(req, res, next) {
 
     next();
   } catch (error) {
-    res.json(error);
+    res.json(1004);
   }
 }
 
