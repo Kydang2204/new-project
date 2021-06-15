@@ -17,6 +17,7 @@ module.exports = {
     'brace-style': ['error', '1tbs', { allowSingleLine: false }],
     'nonblock-statement-body-position': ['error', 'beside'],
     'no-console': isDevelopment() ? 'off' : 'error',
+    'consistent-return': 'off',
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'object-curly-newline': ['error', { minProperties: 2 }],
     'padding-line-between-statements': [

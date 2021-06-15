@@ -29,7 +29,7 @@ router.post('/login', checkEmail, checkPassword);
 
 async function existEmailOrName(req, res, next) {
   if (await User.findOne({ $or: [{ name: req.body.name }, { email: req.body.email }] })) {
-    res.json({ error: 'Your email or name have registered' });
+    return res.status(401).json({ error: 'Your email or name have registered' });
   }
 
   next();
@@ -40,7 +40,7 @@ router.post('/register', existEmailOrName, async (req, res) => {
 
   User.create(req.body);
 
-  return res.json({ msg: 'You have successfully registered' });
+  res.json({ msg: 'You have successfully registered' });
 });
 
 module.exports = router;
