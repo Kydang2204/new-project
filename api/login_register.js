@@ -29,7 +29,7 @@ router.post('/login', checkEmail, checkPassword);
 
 async function existEmailOrName(req, res, next) {
   if (await User.findOne({ $or: [{ name: req.body.name }, { email: req.body.email }] })) {
-    return res.json({ error: 'Your email or name have registered' });
+    res.json({ error: 'Your email or name have registered' });
   }
 
   next();
