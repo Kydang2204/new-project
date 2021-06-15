@@ -9,12 +9,12 @@ function hasToken(req, res, next) {
 }
 
 function hasRightToken(req, res, next) {
-  jwt.verify(req.header('auth_token'), process.env.JSONWEBTOKEN_PASSWORD);
-
   try {
+    jwt.verify(req.header('auth_token'), process.env.JSONWEBTOKEN_PASSWORD);
+
     next();
-  } catch {
-    res.status(400).json({ error: 'Token is not valid' });
+  } catch (error) {
+    res.json(error);
   }
 }
 

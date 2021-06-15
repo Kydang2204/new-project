@@ -33,6 +33,8 @@ async function existEmailOrName(req, res, next) {
   }
 
   next();
+
+  return null;
 }
 
 router.post('/register', existEmailOrName, async (req, res) => {
