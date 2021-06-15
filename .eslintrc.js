@@ -14,6 +14,8 @@ module.exports = {
   ],
   parserOptions: { ecmaVersion: 12 },
   rules: {
+    'brace-style': ['error', '1tbs', { allowSingleLine: false }],
+    'nonblock-statement-body-position': ['error', 'beside'],
     'no-console': isDevelopment() ? 'off' : 'error',
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'object-curly-newline': ['error', { minProperties: 2 }],
