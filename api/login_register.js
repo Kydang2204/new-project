@@ -7,22 +7,26 @@ const User = require('../models/user');
 
 async function checkEmail(req, res, next) {
   if (!await User.findOne({ email: req.body.email })) {
-    res.json({ error: 'You have to register first' });
+    return res.json({ error: 'You have to register first' });
   }
 
   next();
+
+  return null;
 }
 
 async function checkPassword(req, res) {
   const result = await User.findOne({ email: req.body.email });
 
   if (!await bcrypt.compare(req.body.password, result.password)) {
-    res.json({ error: 'Password wrong' });
+    return res.json({ error: 'Password wrong' });
   }
 
   res.json({ data: jsonwebtoken.sign({
     id: result.id, name: result.name,
   }, `${process.env.JSONWEBTOKEN_PASSWORD}`, { expiresIn: `${process.env.JSONWEBTOKEN_EXPIRESIN}` }) });
+
+  return null;
 }
 
 router.post('/login', checkEmail, checkPassword);
