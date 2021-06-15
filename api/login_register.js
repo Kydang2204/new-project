@@ -40,7 +40,7 @@ router.post('/register', existEmailOrName, async (req, res) => {
 
   User.create(req.body);
 
-  res.json({ msg: 'You have successfully registered' });
+  return res.json({ msg: 'You have successfully registered' });
 });
 
 module.exports = router;
