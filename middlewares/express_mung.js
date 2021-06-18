@@ -6,8 +6,10 @@ const router = express.Router();
 
 router.use(mung.json(
   (body) => {
-    if (typeof body === 'number') {
-      return { msg: Object.keys(errorFile).find((key) => (errorFile[key] === body)) };
+    if (typeof body.code === 'number') {
+      return {
+        msg: Object.keys(errorFile).find((key) => errorFile[key] === body.code),
+      };
     }
 
     const body2 = {

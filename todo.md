@@ -1,0 +1,14 @@
+﻿# New-project Todo
+- [x] Eslint
+- [x] dotenv-safe
+- [x] Create mongodb with "user" table
+- [x]  Read about 
+     -  https://eslint.org/docs/rules/semi , https://eslint.org/docs/rules/comma-dangle
+- [x]  Express-mug
+ - [x]  What is NODE_ENV?
+ - [x] Bcrypt
+ - [x] nodeEnv() --> isDevelopment()
+ - [x] Moongose-bcrypt
+ - [x]    Return res.json(1001);--->return res.json({ code: 1001 })
+ - [ ] - Read & apply git workflow
+-  [x]  Use moongose-bycrypt

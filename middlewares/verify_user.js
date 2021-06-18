@@ -2,7 +2,9 @@ const jwt = require('jsonwebtoken');
 
 function hasToken(req, res, next) {
   if (!req.header('auth_token')) {
-    return res.json(1003);
+    return res.json({
+      code: 1003,
+    });
   }
 
   next();
@@ -16,7 +18,9 @@ function hasRightToken(req, res, next) {
 
     next();
   } catch (error) {
-    res.json(1004);
+    res.json({
+      code: 1004,
+    });
   }
 }
 

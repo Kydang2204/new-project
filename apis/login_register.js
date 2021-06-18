@@ -1,13 +1,16 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
-
-const router = express.Router();
 const jsonwebtoken = require('jsonwebtoken');
 const User = require('../models/user');
 
+const router = express.Router();
+
 async function checkEmail(req, res, next) {
-  if (!await User.findOne({ email: req.body.email })) {
-    return res.json(1000);
+  if (!await User.findOne({
+    email: req.body.email,
+  })) {
+    return res.json({
+      code: 1000,
+    });
   }
 
   next();
@@ -16,24 +19,46 @@ async function checkEmail(req, res, next) {
 }
 
 async function checkPassword(req, res) {
-  const result = await User.findOne({ email: req.body.email });
+  const result = await User.findOne({
+    email: req.body.email,
+  });
 
-  if (!await bcrypt.compare(req.body.password, result.password)) {
-    return res.json(1001);
+  try {
+    const matchedValue = await result.verifyPassword(req.body.password);
+
+    if (matchedValue) {
+      return res.json({
+        data: jsonwebtoken.sign({
+          id: result.id, name: result.name,
+        }, `${process.env.JSONWEBTOKEN_PASSWORD}`, {
+          expiresIn: `${process.env.JSONWEBTOKEN_EXPIRESIN}`,
+        }),
+      });
+    }
+
+    return res.json({
+      code: 1001,
+    });
+  } catch (err) {
+    console.log(err);
+
+    return null;
   }
-
-  res.json({ data: jsonwebtoken.sign({
-    id: result.id, name: result.name,
-  }, `${process.env.JSONWEBTOKEN_PASSWORD}`, { expiresIn: `${process.env.JSONWEBTOKEN_EXPIRESIN}` }) });
-
-  return null;
 }
 
 router.post('/login', checkEmail, checkPassword);
 
 async function existEmailOrName(req, res, next) {
-  if (await User.findOne({ $or: [{ name: req.body.name }, { email: req.body.email }] })) {
-    return res.json(1002);
+  if (await User.findOne({
+    $or: [{
+      name: req.body.name,
+    }, {
+      email: req.body.email,
+    }],
+  })) {
+    return res.json({
+      code: 1002,
+    });
   }
 
   next();
@@ -42,11 +67,11 @@ async function existEmailOrName(req, res, next) {
 }
 
 router.post('/register', existEmailOrName, async (req, res) => {
-  req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10));
-
   User.create(req.body);
 
-  res.json(2000);
+  res.json({
+    code: 2000,
+  });
 });
 
 module.exports = router;

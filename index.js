@@ -11,7 +11,9 @@ const router2 = require('./apis/login_register');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false,
+}));
 
 app.use(bodyParser.json());
 
