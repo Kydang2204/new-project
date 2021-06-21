@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/user');
-const existEmailOrName = require('../middlewares/check_email_name');
+const existEmailOrName = require('../middlewares/exist_email_name');
 
 const router = express.Router();
 
