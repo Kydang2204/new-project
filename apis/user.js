@@ -1,5 +1,6 @@
 const express = require('express');
 const User = require('../models/user');
+const existEmailOrName = require('../middlewares/check_email_name');
 
 const router = express.Router();
 
@@ -16,7 +17,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Post a user
-router.post('/', (req, res) => {
+router.post('/', existEmailOrName, (req, res) => {
   User.create(req.body);
 
   res.json({
@@ -25,7 +26,7 @@ router.post('/', (req, res) => {
 });
 
 // Update user
-router.put('/:id', async (req, res) => {
+router.put('/:id', existEmailOrName, async (req, res) => {
   await User.findByIdAndUpdate(req.params.id, req.body);
 
   res.json({

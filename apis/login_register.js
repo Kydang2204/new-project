@@ -1,28 +1,23 @@
 const express = require('express');
 const jsonwebtoken = require('jsonwebtoken');
 const User = require('../models/user');
+const existEmailOrName = require('../middlewares/check_email_name');
 
 const router = express.Router();
 
-async function checkEmail(req, res, next) {
-  if (!await User.findOne({
+router.post('/login', async (req, res) => {
+  const result = await User.findOne({
     email: req.body.email,
-  })) {
+  });
+
+  // Check email
+  if (!result) {
     return res.json({
       code: 1000,
     });
   }
 
-  next();
-
-  return null;
-}
-
-async function checkPassword(req, res) {
-  const result = await User.findOne({
-    email: req.body.email,
-  });
-
+  // Check password
   try {
     const matchedValue = await result.verifyPassword(req.body.password);
 
@@ -41,30 +36,8 @@ async function checkPassword(req, res) {
     });
   } catch (err) {
     console.log(err);
-
-    return null;
   }
-}
-
-router.post('/login', checkEmail, checkPassword);
-
-async function existEmailOrName(req, res, next) {
-  if (await User.findOne({
-    $or: [{
-      name: req.body.name,
-    }, {
-      email: req.body.email,
-    }],
-  })) {
-    return res.json({
-      code: 1002,
-    });
-  }
-
-  next();
-
-  return null;
-}
+});
 
 router.post('/register', existEmailOrName, async (req, res) => {
   User.create(req.body);
