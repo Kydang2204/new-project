@@ -8,7 +8,8 @@ const routers = require('./apis/user');
 const mung = require('./middlewares/express_mung');
 const verifyToken = require('./middlewares/verify_token');
 const publicRouters = require('./apis/login_register');
-
+const verifyToken = require('./middlewares/verify_user');
+const router2 = require('./apis/login_register')
 const app = express();
 
 app.use(bodyParser.urlencoded({
