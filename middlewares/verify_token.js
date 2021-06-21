@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-function hasToken(req, res, next) {
+const hasToken = (req, res, next) => {
   if (!req.header('auth_token')) {
     return res.json({
       code: 1003,
@@ -8,11 +8,9 @@ function hasToken(req, res, next) {
   }
 
   next();
+};
 
-  return null;
-}
-
-function hasRightToken(req, res, next) {
+const hasRightToken = (req, res, next) => {
   try {
     jwt.verify(req.header('auth_token'), process.env.JSONWEBTOKEN_PASSWORD);
 
@@ -22,7 +20,7 @@ function hasRightToken(req, res, next) {
       code: 1004,
     });
   }
-}
+};
 
 const verifyToken = [hasToken, hasRightToken];
 

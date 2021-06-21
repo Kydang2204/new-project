@@ -17,6 +17,6 @@ userSchema.plugin(require('mongoose-bcrypt'), {
   rounds: 10,
 });
 
-const User = mongoose.model('userModel', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

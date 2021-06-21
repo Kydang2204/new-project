@@ -1,8 +1,6 @@
 require('dotenv').config();
 
-function isDevelopment() {
-  return process.env.NODE_ENV === 'development';
-}
+const isDevelopment = () => process.env.NODE_ENV === 'development';
 
 module.exports = {
   env: {
@@ -16,11 +14,13 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
+    'no-console': isDevelopment() ? 'off' : 'error',
+    'consistent-return': 'off',
     'brace-style': ['error', '1tbs', {
       allowSingleLine: false,
     }],
     'nonblock-statement-body-position': ['error', 'beside'],
-    'no-console': isDevelopment() ? 'off' : 'error',
+
     'no-multiple-empty-lines': ['error', {
       max: 1,
     }],
