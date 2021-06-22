@@ -28,31 +28,31 @@
 
 -  [x] fixs some mistakes from review:
 
-- verifyToken vs verify_user in index.js
+    -    [x]  verifyToken vs verify_user in index.js
 
-- router2 ??? in index.js
+    -   [x] router2 ??? in index.js
 
-- return null
+   -  [x]  return null
 
-- remove async in login_register.js
+   -   [x]  remove async in login_register.js
 
-- remove pakage-lock.json
+    -   [x]  remove pakage-lock.json
 
-- 'userModel' -> User in user.js
+    -   [x]  'userModel' -> User in user.js
 
-- remove middleware checkEmail,checkPassword in login_register.js
+    -   [x] remove middleware checkEmail,checkPassword in login_register.js
 
-- create more 1 middleware to check exist email or name
+   -   [x]  create more 1 middleware to check exist email or name
 
-- update middleware express_mung
-
-- update user.js add middleware existEmailOrName to method for creating user and updating user
--  Reply question
-  - checkEmail và existEmailOrName là middleware 
-    → có cần thiết ko? 
-    existEmailOrName cần dùng lại trong update vào create user nên cần tạo middleware
-    → có thể xử lý logic này bên trong handler của route ko?
-    được.
+    -   [x]  update middleware express_mung
+  
+    -   [x]  update user.js add middleware existEmailOrName to method for creating user and updating user
+    -   [x]   Reply question
+    -   checkEmail và existEmailOrName là middleware 
+     → có cần thiết ko? 
+     existEmailOrName cần dùng lại trong update vào create user nên cần tạo middleware
+     → có thể xử lý logic này bên trong handler của route ko?
+     được.
   - middleware dùng để làm gì? 
   --> Khả năng tái sử dụng.
   --> Tiết kiệm thời gian.
