@@ -1,6 +1,6 @@
 # New-project Todo
-## Not yet finish
-## Finish
+## Todo
+## Done
 
 -  [x] Tìm hiểu về cách sử dụng Eslint và áp dụng vào dự án
 
