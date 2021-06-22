@@ -49,12 +49,12 @@
     -   [x]  update user.js add middleware existEmailOrName to method for creating user and updating user
     -   [x]   Reply question
     -   checkEmail và existEmailOrName là middleware 
-     → có cần thiết ko? 
-     existEmailOrName cần dùng lại trong update vào create user nên cần tạo middleware
-     → có thể xử lý logic này bên trong handler của route ko?
+         → có cần thiết ko? 
+         existEmailOrName cần dùng lại trong update vào create user nên cần tạo middleware
+      → có thể xử lý logic này bên trong handler của route ko?
      được.
-  - middleware dùng để làm gì? 
-  --> Khả năng tái sử dụng.
-  --> Tiết kiệm thời gian.
-  -->Tăng tính đồng nhất.
-  --> Dễ hiểu, dễ bảo trì.
+     - middleware dùng để làm gì? 
+         --> Khả năng tái sử dụng.
+         --> Tiết kiệm thời gian.
+         -->Tăng tính đồng nhất.
+         --> Dễ hiểu, dễ bảo trì.
