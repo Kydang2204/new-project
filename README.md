@@ -1,6 +1,6 @@
 # New-project Todo
-## Todo
-## Done
+## TODO
+## DONE
 
 -  [x] Tìm hiểu về cách sử dụng Eslint và áp dụng vào dự án
 
