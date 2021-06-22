@@ -16,7 +16,6 @@
       - existEmailOrName thì cần thiết được dùng lại cho phương thức create và update trong file api/user.js, checkEmail thì không vì không được sử dụng lại
       - Middleware dùng để làm gì? 
       - Dùng để tái sử dụng, tiết kiệm thời gian, tăng tính đồng nhất, giúp dễ hiểu, dễ bảo trì.
-  
 -  [x] Tìm hiểu về cách sử dụng Eslint và áp dụng vào dự án
 -  [x] Tìm hiểu về cách sử dụng dotenv-safe và áp dụng vào dự án
 -  [x] Tạo một schema với User với name,email,pasword, Tạo các method post,get, get 1 item, put, delete
