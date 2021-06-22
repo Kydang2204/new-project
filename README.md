@@ -1,17 +1,6 @@
 # New-project Todo
 ## TODO
 ## DONE
--  [x] Tìm hiểu về cách sử dụng Eslint và áp dụng vào dự án
--  [x] Tìm hiểu về cách sử dụng dotenv-safe và áp dụng vào dự án
--  [x] Tạo một schema với User với name,email,pasword, Tạo các method post,get, get 1 item, put, delete
--  [x] Tìm hiểu về semi và comma-dangle trong Eslint và áp dụng vào dự án
--  [x] Thêm thư viện express-mung để chỉnh sửa đầu ra output
--  [x] Tìm hiểu về cách sử dung NODE_ENV và áp dụng vào dự án
--  [x] Tìm hiểu về Bcrypt , So sánh với nó với encode và decode
--  [x] Sửa function từ nodeEnv() thành isDevelopment() trong file eslintrc.js 
--  [x] Tìm hiểu về cách sử dụng Moongose-bcrypt và áp dụng vào dự án
--  [x] Chỉnh sửa Return res.json(1001) thành return res.json({ code: 1001 })
--  [x] Tìm hiểu về git workflow và áp dụng vào dự án
 -  [x] Sửa một số lỗi review từ PM
    -  [x] Về dòng 9 trong file index.js (verifyToken vs verify_user) đã sửa verify_user thành verify_token
    -  [x] Về dòng 10 trong file index.js (router2 ??? in index.js) đã sửa thành publicRouters
@@ -28,3 +17,15 @@
       - Middleware dùng để làm gì? 
       - Dùng để tái sử dụng, tiết kiệm thời gian, tăng tính đồng nhất, giúp dễ hiểu, dễ bảo trì.
   
+-  [x] Tìm hiểu về cách sử dụng Eslint và áp dụng vào dự án
+-  [x] Tìm hiểu về cách sử dụng dotenv-safe và áp dụng vào dự án
+-  [x] Tạo một schema với User với name,email,pasword, Tạo các method post,get, get 1 item, put, delete
+-  [x] Tìm hiểu về semi và comma-dangle trong Eslint và áp dụng vào dự án
+-  [x] Thêm thư viện express-mung để chỉnh sửa đầu ra output
+-  [x] Tìm hiểu về cách sử dung NODE_ENV và áp dụng vào dự án
+-  [x] Tìm hiểu về Bcrypt , So sánh với nó với encode và decode
+-  [x] Sửa function từ nodeEnv() thành isDevelopment() trong file eslintrc.js 
+-  [x] Tìm hiểu về cách sử dụng Moongose-bcrypt và áp dụng vào dự án
+-  [x] Chỉnh sửa Return res.json(1001) thành return res.json({ code: 1001 })
+-  [x] Tìm hiểu về git workflow và áp dụng vào dự án
+
