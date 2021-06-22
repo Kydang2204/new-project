@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/register', existEmailOrName, async (req, res) => {
+router.post('/register', existEmailOrName, (req, res) => {
   User.create(req.body);
 
   res.json({
