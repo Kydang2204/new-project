@@ -45,3 +45,4 @@
                 - existEmailOrName thì cần thiết được dùng lại cho phương thức create và update trong file api/user.js, checkEmail thì không vì không được sử dụng lại
      - Middleware dùng để làm gì? 
                 - Dùng để tái sử dụng, tiết kiệm thời gian, tăng tính đồng nhất, giúp dễ hiểu, dễ bảo trì.
+   ## Not yet finish
