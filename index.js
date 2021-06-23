@@ -4,10 +4,10 @@ require('dotenv-safe').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const routers = require('./apis/user');
+const routers = require('./api/user');
 const mung = require('./middlewares/express_mung');
 const verifyToken = require('./middlewares/verify_token');
-const publicRouters = require('./apis/login_register');
+const publicRouters = require('./api/login_register');
 
 const app = express();
 

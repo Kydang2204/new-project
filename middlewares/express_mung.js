@@ -8,6 +8,7 @@ router.use(mung.json(
   (body) => {
     if (typeof body.code === 'number') {
       const code = Math.floor(body.code / 1000);
+
       return {
         ret_code: code === 1 ? -1 : 0,
         ret_msg: code === 1 ? 'Fail' : 'OK',
