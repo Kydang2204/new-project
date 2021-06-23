@@ -1,9 +1,5 @@
 const mongoose = require('./main');
 
-mongoose.set('useCreateIndex', true);
-
-mongoose.set('useFindAndModify', false);
-
 const userSchema = new mongoose.Schema({
   name: {
     type: String, required: true,

@@ -4,6 +4,10 @@ mongoose.connect(`mongodb+srv://${process.env.MONGDB_USER}:${process.env.MONGDB_
   useNewUrlParser: true, useUnifiedTopology: true,
 });
 
+mongoose.set('useCreateIndex', true);
+
+mongoose.set('useFindAndModify', false);
+
 console.log('Successfully connected to MongoDB at: mongodb');
 
 module.exports = mongoose;
