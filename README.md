@@ -1,5 +1,6 @@
 # New-project Todo
 ## TODO
+-  [] Tìm hiểu về leetcode.
 ## DONE
 -  [x] Sửa một số lỗi review từ PM
    -  [x] Về dòng 9 trong file index.js (verifyToken vs verify_user) đã sửa verify_user thành verify_token
