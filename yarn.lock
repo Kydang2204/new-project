@@ -598,6 +598,14 @@ dotenv@^8.2.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
   integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
 
+dotenvenc@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/dotenvenc/-/dotenvenc-2.0.1.tgz#7fda4f3e3c3182b084f589d4dbd5515dd833ef26"
+  integrity sha512-Ri1WKxb7vWTanrBZU+oTnKTWB1YEik8VES1yEA7IuqTYnFUTEUZXS/ScKYx8QOLJNkB+mmhdYWPGCDFXYjHgDg==
+  dependencies:
+    md5-file "3.1.1"
+    minimist "1.2.5"
+
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
@@ -1559,6 +1567,11 @@ make-dir@^3.0.0:
   dependencies:
     semver "^6.0.0"
 
+md5-file@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/md5-file/-/md5-file-3.1.1.tgz#db3c92c09bbda5c2de883fa5490dd711fddbbab9"
+  integrity sha1-2zySwJu9pcLeiD+lSQ3XEf3burk=
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -1608,7 +1621,7 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimist@^1.2.0:
+minimist@1.2.5, minimist@^1.2.0:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
