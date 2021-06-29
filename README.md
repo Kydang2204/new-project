@@ -1,11 +1,11 @@
 # New-project Todo
 ## TODO
 -  [ ] Đề xuất Todo tiếp theo. 
-   -  [ ] Tìm hiểu về bảo mật bằng token? có an toàn không ? đề xuất cách để nó an toàn hơn?   
+   -  [ ] Tìm hiểu về bảo mật bằng token? có an toàn không ? đề xuất cách để nó an toàn hơn?  
+-  [ ] Review code line by line thấy chỗ nào ko hợp lý --> sửa cho nó hợp lý, đặt câu hỏi code này 6 tháng ,nữa mình đọc có hiểu được không chỗ này, code ghi như thế nào ,bản chất của xử lý là thế nào  
 -  [ ] Git workflow là gì , sử dụng nó như thế nào, có công cụ nào thay thế, nó hoạt động thế nào?
 -  [ ] Moongose-bycrypt là gì, sử dụng như thế nào, có công cụ nào thay thế, nó chạy như thế nào?
 -  [ ] NODE_ENV là gì, tại sao?, sử dụng nó như thế nào, có công cụ nào thay thế không , nó chạy như thế nào?
--  [ ] Review code line by line thấy chỗ nào ko hợp lý --> sửa cho nó hợp lý, đặt câu hỏi code này 6 tháng ,nữa mình đọc có hiểu được không chỗ này, code ghi như thế nào ,bản chất của xử lý là thế nào 
 -  [ ] Middleware dùng để làm gì?
 -  [ ] Đồng nhất arrow funtion
 -  [ ] Remove file package-lock.json
