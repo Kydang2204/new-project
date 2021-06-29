@@ -1,0 +1,1 @@
+DOTENVENC_KEY='myPassword'

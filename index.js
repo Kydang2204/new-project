@@ -1,3 +1,5 @@
+require('dotenvenc')('myPassword');
+
 require('dotenv').config();
 
 require('dotenv-safe').config();

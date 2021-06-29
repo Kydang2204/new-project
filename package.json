@@ -8,6 +8,7 @@
     "commit": "^0.0.4",
     "dotenv": "^10.0.0",
     "dotenv-safe": "^8.2.0",
+    "dotenvenc": "^2.0.1",
     "express": "^4.17.1",
     "express-mung": "^0.5.1",
     "jsonwebtoken": "^8.5.1",
