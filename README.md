@@ -1,9 +1,17 @@
 # New-project Todo
 ## TODO
--  [ ] Tìm hiểu về Leetcode.
+-  [ ] Đề xuất Todo tiếp theo. 
+   -  [ ] Tìm hiểu về bảo mật bằng token? có an toàn không ? đề xuất cách để nó an toàn hơn?   
+-  [ ] Git workflow là gì , sử dụng nó như thế nào, có công cụ nào thay thế, nó hoạt động thế nào?
+-  [ ] Moongose-bycrypt là gì, sử dụng như thế nào, có công cụ nào thay thế, nó chạy như thế nào?
+-  [ ] NODE_ENV là gì, tại sao?, sử dụng nó như thế nào, có công cụ nào thay thế không , nó chạy như thế nào?
+-  [ ] Review code line by line thấy chỗ nào ko hợp lý --> sửa cho nó hợp lý, đặt câu hỏi code này 6 tháng ,nữa mình đọc có hiểu được không chỗ này, code ghi như thế nào ,bản chất của xử lý là thế nào 
+-  [ ] Middleware dùng để làm gì?
+-  [ ] Đồng nhất arrow funtion
+-  [ ] Remove file package-lock.json
+-  [ ] Chuyển data→ MONGODB_NAME,Chuyển cluster0.xbdzw.mongodb.net -> MONGODB_HOST trong file .env và .env.example
 ## DONE
--  [x] Sửa một số lỗi review từ PM
-   -  [x] Chỉnh lại toàn bộ function thành arrow function. 
+-  [x] Sửa một số lỗi review từ PM. 
    -  [x] Về dòng 9 trong file index.js (verifyToken vs verify_user) đã sửa verify_user thành verify_token
    -  [x] Về dòng 10 trong file index.js (router2 ??? in index.js) đã sửa thành publicRouters
    -  [x] Về return null trong các file login_register.js và verify_token đã xóa return null và sửa file eslintrc.js thêm 'consistent-return': 'off' để không bị báo lỗi
