@@ -1,1 +1,0 @@
-DOTENVENC_KEY='myPassword'
