@@ -1,4 +1,4 @@
-require('dotenvenc')('myPassword');
+require('dotenvenc')('');
 
 require('dotenv').config();
 
