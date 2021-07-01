@@ -1,4 +1,4 @@
-require('dotenvenc')('');
+require('dotenvenc')('password');
 
 require('dotenv').config();
 
@@ -28,3 +28,4 @@ app.use('/api/public', publicRouters);
 app.listen(process.env.PORT);
 
 console.log(`App listening on ${process.env.PORT}`);
+
