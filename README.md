@@ -3,7 +3,7 @@
 - [ ] Đề xuất Todo tiếp theo. 
    - [ ] Tìm hiểu về bảo mật bằng token? có an toàn không? đề xuất cách để nó an toàn hơn?  
 - [ ] Eslint là gì?, sử dụng như thế nào?, có công cụ nào thay thế?, nó chạy như thế nào?
-- [ ] Review code line by line thấy chỗ nào ko hợp lý --> sửa cho nó hợp lý, đặt câu hỏi code này 6 tháng, nữa mình đọc có hiểu được không chỗ này, code ghi như thế nào, bản chất của xử lý là thế nào?
+- [ ] Review code line by line thấy chỗ nào ko hợp lý --> sửa cho nó hợp lý, đặt câu hỏi code này 6 tháng, nữa mình đọc có hiểu được không? chỗ này code ghi như thế nào? bản chất của xử lý là thế nào?
 ## DONE
 - [x] **Git workflow là gì?, sử dụng nó như thế nào, có công cụ nào thay thế, nó hoạt động thế nào?**
  - ***Git workflow*** là thực hiện phân nhánh nghiêm ngặt theo mẫu được thiết kế quanh nhánh master là xương sống của dự án. Nó cung cấp mô hình giúp để quản lý những dự án lớn.
