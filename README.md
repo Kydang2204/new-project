@@ -1,7 +1,7 @@
 # New-project Todo
 ## TODO
 - [ ] Đề xuất Todo tiếp theo. 
-  - [ ] Tìm hiểu về bảo mật bằng token? có an toàn không ? đề xuất cách để nó an toàn hơn?  
+   - [ ] Tìm hiểu về bảo mật bằng token? có an toàn không ? đề xuất cách để nó an toàn hơn?  
 - [ ] Eslint là gì, sử dụng như thế nào, có công cụ nào thay thế, nó chạy như thế nào?
 - [ ] Review code line by line thấy chỗ nào ko hợp lý --> sửa cho nó hợp lý, đặt câu hỏi code này 6 tháng ,nữa mình đọc có hiểu được không chỗ này, code ghi như thế nào ,bản chất của xử lý là thế nào . 
 ## DONE
@@ -28,7 +28,7 @@
 - [x] **dotenv là gì ?sử dụng như thế nào, có công cụ nào thay thế, nó chạy như thế nào?**
 	- Trong quá trình phát triển. Dự án sẽ trải qua các môi trường khác nhau. mỗi môi trường sẽ cần một số biến môi trường khác nhau. dotenv sẽ giúp nhanh chóng chuyển các biến đó.
 	- Có thể rút ngắn tiền tố process.env trong dotenv config để làm gọn code bằng cách tạo một file gán biến cho process.env. và gọi file đó trong file có sử dụng biến môi trường
-	-  Để chuyển giữa các môi trường được dễ dàng chúng ta cần một số công cụ đi kèm với dotenv như sau:
+	- Để chuyển giữa các môi trường được dễ dàng chúng ta cần một số công cụ đi kèm với dotenv như sau:
 	- ***dotenv-safe***: Quá trình post lên git sẽ có nhưng thông tin nhạy cảm không được puclic . docenv-safe sẽ đọc file .env.example để đảm bảo không bị thiếu biến môi trường nào khi chạy chương trình.
 	- ***dotenvenc*** : dotenv có thể dùng chung với dotenvenc để tạo ra 1 password có khả năng tạo ra file .env sau khi clone code từ git.  
 	- ***env-cmd*** :  Thay vì liêt kê từng biến môi trường trên terminal để chạy code  chúng ta có thể dùng env-cmd để đọc file .env đó và chạy code theo file .env mà env-cmd được yêu cầu đọc. Có thể thiết lập gộp các biến môi trường của các môi trường khác nhau vào 1 file .env và env-cmd có thể đọc biến  theo từng môi trường mà nó được yêu cầu. 
