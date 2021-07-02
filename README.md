@@ -64,7 +64,7 @@
 - [x] Tìm hiểu về semi và comma-dangle trong Eslint và áp dụng vào dự án.
 - [x] Thêm thư viện express-mung để chỉnh sửa đầu ra output.
 - [x] Tìm hiểu về cách sử dung NODE_ENV và áp dụng vào dự án.
-- [x] Tìm hiểu về Bcrypt, so sánh với nó với encode và decode.
+- [x] Tìm hiểu về bcrypt, so sánh với nó với encode và decode.
 - [x] Sửa function từ nodeEnv() thành isDevelopment() trong file eslintrc.js.
 - [x] Tìm hiểu về cách sử dụng Moongose-bcrypt và áp dụng vào dự án.
 - [x] Chỉnh sửa Return res.json(1001) thành return res.json({ code: 1001 }).
