@@ -42,7 +42,7 @@
 	- Middleware ở giữa api và web. Middleware dùng để chỉnh sửa, kiểm tra resquest từ web và response từ server.
 - [x] Đồng nhất arrow funtion.
 - [x] Remove file package-lock.json.
-- [x] Chuyển data→ MONGODB_NAME,Chuyển cluster0.xbdzw.mongodb.net -> MONGODB_HOST trong file .env và .env.example.
+- [x] Chuyển data → MONGODB_NAME, chuyển cluster0.xbdzw.mongodb.net -> MONGODB_HOST trong file .env và .env.example.
 - [x] Sửa một số lỗi review từ PM. 
    - [x] Về dòng 9 trong file index.js (verifyToken vs verify_user) đã sửa verify_user thành verify_token.
    - [x] Về dòng 10 trong file index.js (router2 ??? in index.js) đã sửa thành publicRouters.
@@ -50,7 +50,7 @@
    - [x] Xóa async trong dong 42 của file login_register vì không cần async ở đây.
    - [x] Remove file pakage-lock.json vì không cần thiết.
    - [x] Sửa 'userModel' -> User ở dòng 19 file models/user.js.
-   - [x] Remove middleware checkEmail,checkPassword in file login_register.js chuyển vào handler của post('/login').
+   - [x] Remove middleware checkEmail, checkPassword in file login_register.js chuyển vào handler của post('/login').
    - [x] Tạo more 1 middleware để kiểm tra tồn tại email hoặc name đó hay chưa chưa exist_email_name sử dụng nó trong /api/user.js vào phương thức create user và update user.
    - [x] Update middleware express_mung thêm vào ret_code và ext_code.
    - [x] Reply question:     
