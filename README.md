@@ -34,7 +34,7 @@
 	- ***env-cmd*** :  Thay vì liêt kê từng biến môi trường trên terminal để chạy code  chúng ta có thể dùng env-cmd để đọc file .env đó và chạy code theo file .env mà env-cmd được yêu cầu đọc. Có thể thiết lập gộp các biến môi trường của các môi trường khác nhau vào 1 file .env và env-cmd có thể đọc biến  theo từng môi trường mà nó được yêu cầu. 
 	- ***cross-env*** : Giúp file các thiết lập biến môi trường chạy được trên Windows.
 	- ***dotenv-webpack*** Dùng để tạo ra những config cho việc chạy trên nhưng môi trường khác nhau.
-- [x] **NODE_ENV là gì**
+- [x] **NODE_ENV là gì?**
 	- NODE_ENV là biến môi trường. Khi ứng dụng chạy nó sẽ kiểm tra biến môi trường và thực hiện những hành động khác nhau dựa vào giá trị của biến.
 	- Mỗi môi trường khác nhau chúng ta sẽ có một số hành động khác nhau nên chúng ta cần phải sử dụng nó.
 	- Trong file .env chúng ta thêm vào biến môi trường NODE_ENV = với môi trường mà chúng ta muốn chạy. Ở các hành động mà chúng ta muốn ứng dụng chạy khác nhau trong nhưng môi trường khác nhau chúng ta sẽ thiết lập hàm nếu là môi trường này thì làm này không phải thì làm cái khác.
