@@ -10,12 +10,12 @@
 	- Ví dụ về một mô hình git workflow phổ biến của Vincent Driessen
 	- Nhánh develop tạo từ Nhánh master
 	- Nhánh release tạo từ nhánh develop 
-	- Nhánh feature tạo từ nhánh release
-	- Khi feature hoàn thành thì merge vào develop và master
+	- Nhánh feature tạo từ nhánh develop
+	- Khi feature hoàn thành thì merge vào develop
 	- Khi realease hoàn thành thì merge vào develop và master 
 	- Nếu có vấn đề xảy ra ở nhánh master sẽ tạo ra nhánh hotfix từ nhánh master
 	- Khi nhánh hotfix hoàn thành thì merge vào cả nhanh master và nhánh develop
-	- Trong mô hình này nhánh develop sẽ trở thành nhóm backup cho nhánh master, nhánh realease sẽ tập hợp những những feature  khi đã hoàn thành để merge vào nhánh master tạo version mới merge vô develop để backup sử dụng cho sửa chữa phát triển sau này.
+	- Trong mô hình này nhánh develop sẽ trở thành nhóm backup cho nhánh master, nhánh realease sẽ tập hợp những những feature khi đã hoàn thành để merge vào nhánh master tạo version mới merge vô develop để backup sử dụng cho sửa chữa phát triển sau này.
  ***Sử dụng:***
 	 - Đối với dự án hiện tại chỉ làm một người  thì có thể chỉ tạo ra nhánh develop để backup nhánh master. Khi nào cần update sẽ tạo ra nhánh develop từ master để chỉnh sửa trên nhánh develop đó khi hoàn thành sẽ push lên git nhánh đó lên cùng với chuyển qua nhánh master để dùng terminal để merge với nhánh develop vừa update và push lên git nhánh master.
 	- Đối với dự án lớn hơn 2 người trở lên người developer tạo ra nhánh develop từ  nhánh từ master chỉnh sửa trên trên master và sau khi hoàn thành thì gửi push lên git. git sẽ tự tạo yêu cầu merge vào master. PM sẽ kiểm tra và tiến hành merge. sau khi merge trên git. nếu master ở trên local chưa được update merge thì cần thực hiện git pull để update merge và tiếp tục phân nhánh chỉnh sửa trên nhánh develop. 
